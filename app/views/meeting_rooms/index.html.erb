@@ -1,0 +1,26 @@
+<h1>Etouch Meeting Rooms</h1>
+<div class="container">
+  <div class="meeting_room">
+  	<table>
+  		<tr>
+  			<th>Rooms</th>
+  			<th>View all Bookings</th>
+  			<th></th>
+  			<th></th>
+  			<th></th>
+  		</tr>
+<% @meeting_rooms.each do |meeting_room| %>
+
+  		<tr>
+  			<td><%= meeting_room.name %></td>
+  			<td><%= link_to "View", meeting_room_bookings_path(meeting_room) %></td>
+  			<td><%= link_to "Delete", meeting_room_path(meeting_room), data: { confirm: 'Are you sure?' }, method: :delete %></td>
+  			<td><%= link_to "Edit", edit_meeting_room_path(meeting_room) %></td>
+  			<td><%= link_to "Add booking", new_meeting_room_booking_path(meeting_room) %></td>
+  		</tr>
+<% end %>
+
+  	</table>	
+    
+  </div>
+</div>

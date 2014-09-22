@@ -1,0 +1,13 @@
+<% if @meeting_room.errors.any? %>
+  <div class="errors">
+    <h3>
+      <%= pluralize(@meeting_room.errors.count, 'error') %>
+      prohibited this meeting_room from being saved:
+    </h3>
+    <ul>
+      <% @meeting_room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
