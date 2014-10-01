@@ -8,17 +8,22 @@
   
 </head>
 <body>
-  <p class="navbar-text pull-right">
+
+  <div class="wrapper">
+<img class="pull-left" alt="logo" src="/assets/etouch_systems_logo.png" width="100" />
+
 <% if user_signed_in? %>
-  User Name: <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+
+<p class="pull-right">Welcome: <strong><%= current_user.email %></strong>  
+  <!--<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |-->
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  </p>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
-
-
+<div class="clear"></div>
+<h1>Meeting Room Reservation</h1>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -28,6 +33,7 @@
 <%= yield %>
 
 
+</div>
 
 </body>
 </html>

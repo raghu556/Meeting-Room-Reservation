@@ -1,13 +1,24 @@
 <h1> Bookings for <%= @meeting_room.name %></h1>
+<%= link_to 'Go Back <<',controller: "home" ,action: "index" %>
 <div class="container">
   <div class="meeting_room">
+    <%- if @bookings.size == 0 %>
+      <p>No Records</p>
+      <%- else %>
     <table class="bookings_table">
       <tr>
+        <th>Username</th>
         <th>Start</th>
         <th>End</th>
+        <th></th>
+        <th></th>
       </tr>
+    <%-end %>
   <% @bookings.each do |booking| %>
   <tr>
+     <td>
+      <%= booking.start_time.strftime('%e %b %Y %H:%M%p') %>
+    </td>
     <td>
       <%= booking.start_time.strftime('%e %b %Y %H:%M%p') %>
     </td>

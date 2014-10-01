@@ -1,7 +1,14 @@
-<h1>Welcome To Etouch Meeting Room Reservation</h1>
-<p>Below are the Rooms Available in Etouch</p>
-<ul>
-<% @meeting_rooms.each do |meeting_room| %>
-  <li><%= meeting_room.name %></li>
-<% end %>
-</ul>
+
+	
+	<%= link_to 'Click Here to Add Rooms',controller: "meeting_rooms" ,action: "new" %>
+	<div class="clear"></div>
+
+	<p class="bg-success">Below are the Rooms Available in Etouch (Click on the room to view Bookings)</p>
+	<% @meeting_rooms.each do |meeting_room| %>
+	<ul class="one-line-listing">
+		<li><strong><%= link_to meeting_room.name, meeting_room_bookings_path(meeting_room) %></strong></li>
+		<li><%= link_to "Add booking", new_meeting_room_booking_path(meeting_room) %></li>
+	</ul>
+	<div class="clear"></div>
+	<% end %>
+	

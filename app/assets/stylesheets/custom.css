@@ -1,7 +1,7 @@
 *{
   font-family: Helvetica;
 }
-
+.clear{clear: both;}
 .wrapper {
   width:60%;
   border:1px solid gray;
@@ -9,7 +9,7 @@
   margin: 20px auto;
   padding: 10px;
 }
-
+p{padding: 5px;}
 .bookings_table input[type="number"] { 
   width:30px; 
 }
@@ -17,8 +17,15 @@
 .bookings_table{
   font-size: 14px;
   color: gray;
+  margin-top: 10px;
 }
-
+.bookings_table th{
+  border-bottom: 1px solid #666;
+  text-align: center;
+  padding: 5px 0;
+  background: #ccc;
+  color: #000;
+}
 .errors {
   color:#c00;
 }
@@ -30,12 +37,30 @@
 .container{
   font-family: Trebuchet;
   font-size: 15px;
-  width: 600px;
+  width: 900px;
   margin: 0 auto;
 }
 h1{
   text-align: center;
 }
-.meeting_room th,.meeting_room td:first-child{text-align: left}
+.meeting_room{
+  border-left: 1px solid #ccc;
+}
+.meeting_room td{
+  text-align: center;
+  text-transform: capitalize;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.one-line-listing{
 
-.meeting_room td{text-align: center;text-transform: capitalize;padding: 10px 10px 0 0 ;}
+}
+.one-line-listing li{
+  float: left;
+  list-style: none;
+  border-right: 1px solid #666;
+  width: 100px;
+  padding: 0 10px;
+  text-align: center;
+}
